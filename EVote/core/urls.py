@@ -2,7 +2,7 @@ from django.urls import path
 
 from . import views
 
-# CONTOH URL
-# urlpatterns = [
-#     path('', views.CONTOH_view, name='CONTOH'),
-# ]
+urlpatterns = [
+    path('', views.voting_view, name='voting'),
+    path('success', views.success_view, name='success'),
+]
