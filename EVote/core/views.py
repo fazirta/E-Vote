@@ -5,7 +5,10 @@ from django.db.models import Q
 from django.shortcuts import render, redirect
 from . import models
 
-# CONTOH VIEWS
-# def CONTOH_view(request):
-#     contexts = {}
-#     return render(request, 'FOLDER/CONTOH.html', contexts)
+def voting_view(request):
+    contexts = {}
+    return render(request, 'core/voting.html', contexts)
+
+def success_view(request):
+    contexts = {}
+    return render(request, 'core/success.html', contexts)
