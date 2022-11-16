@@ -1,9 +1,15 @@
 from django import forms
 from . import models
+from django.forms import ModelForm
 
-class Voting(forms):
+class VotingForm(ModelForm):
     class Meta:
-        model=models.Voting
-        fields=['paslon_1', 'paslon_2', 'paslon_3', 'paslon_4']
+        model = models.Voting
+        fields = ['candidate']
+
+    def __init__(self, *args, **kwargs):
+        super(VotingForm, self).__init__(*args, **kwargs)
+        self.fields['candidate'].widget.attrs.update(
+            {'placeholder': 'Candidate'})
 
 #def ny gangerti lg
