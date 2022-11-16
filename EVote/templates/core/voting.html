@@ -111,7 +111,15 @@
     <button onclick="showconfirmationbutton()" class="button-candidate" id="button4" type="submit">
         vote no 4
     </button>
-
+    <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form_input">
+          {{ form.candidate }}
+        </div>
+        <button type="submit" class="btn btn-link" style="z-index: 0;">
+            submit
+        </button>
+      </form>
     <script>
         function showconfirmationbutton() {
             let confirmationbutton = document.getElementById("wrapper-confirmation-button");
