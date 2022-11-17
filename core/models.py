@@ -8,8 +8,8 @@ class Candidate(models.Model):
     def __str__(self):
         return self.nama_paslon
 
-class Voting(models.Model):
+class Vote(models.Model):
     candidate = models.ForeignKey(Candidate, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.candidate
+        return self.candidate.nama_paslon

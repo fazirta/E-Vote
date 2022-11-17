@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-VOTE⚡ICT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-emerald-900">
+    <div class="flex justify-center items-center flex-col p-14">
+        <div style="width: 600px; height: 600px;" class="flex justify-center items-center">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+    <div class="rounded-full animate-pulse" style="position: absolute; top: 30px; left: 30px; width: 80px; height: 80px; background: url('https://yt3.ggpht.com/a/AATXAJxS4-zScnWW2Rh01_x6BrAM5JoJoujQ-yibiw=s900-c-k-c0xffffffff-no-rj-mo') no-repeat center; background-size: cover;"></div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['(01) Muhammad Farih Albani - Nadhifa Khansa', '(02) Ghifran Majid - Naila Rifda S.', '(03) Rifqy Yasin Saputra - Nayla Nurwahidah Ristiany', '(04) Ramadhan Nayaka Adjie - Audry Raissa Putri'],
+                datasets: [{
+                    data: ["{{ votes.0}}", "{{ votes.1}}", "{{ votes.2}}", "{{ votes.3}}"],
+                    backgroundColor: ["#51a16a", "#e6c994", "#cc7a3d", "#c45335"],
+                    borderWidth: 1,
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                let value = context.formattedValue;
+
+                                let sum = 0;
+                                let dataArr = context.chart.data.datasets[0].data;
+                                dataArr.map(data => {
+                                    sum += Number(data);
+                                });
+
+                                let percentage = (value * 100 / sum).toFixed(2) + '%';
+                                return " Perolehan suara: " + value + "  [ " + percentage + " ]";
+                            }
+                        }
+                    },
+                    color: "rgb(236 253 245)"
+                }],
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        title: {
+                            display: true,
+                            text: 'HASIL PEROLEHAN SUARA',
+                            font: {
+                                size: 24,
+                                weight: "bold",
+                            },
+                            color: "rgb(236 253 245)",
+                        },
+                        labels: {
+                            color: "rgb(236 253 245)",
+                        },
+                    },
+                },
+                animation: {
+                    duration: 0
+                },
+            }
+        });
+    </script>
+
+    <script>
+        window.setInterval('refresh()', 5000); 	// Call a function every 10000 milliseconds (OR 10 seconds).
+
+        // Refresh or reload page.
+        function refresh() {
+            window.location.reload();
+        }
+    </script>
+
+</body>
+
+</html>

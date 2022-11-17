@@ -4,13 +4,14 @@ from django.contrib import messages
 from django.db.models import Q
 from django.shortcuts import render, redirect
 from . import models
-from .forms import VotingForm
+from .forms import VoteForm
+from django.db.models import Count
 
-def voting_view(request):
-    form = VotingForm()
+def Vote_view(request):
+    form = VoteForm()
 
     if request.method == 'POST':
-        form = VotingForm(request.POST, request.FILES)
+        form = VoteForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect(to='success')
@@ -24,3 +25,7 @@ def success_view(request):
     contexts = {}
     return render(request, 'core/success.html', contexts)
 
+def result_view(request):
+    votes = [len(models.Vote.objects.filter(candidate__nama_paslon__contains="PASLON 1")), len(models.Vote.objects.filter(candidate__nama_paslon__contains="PASLON 2")), len(models.Vote.objects.filter(candidate__nama_paslon__contains="PASLON 3")), len(models.Vote.objects.filter(candidate__nama_paslon__contains="PASLON 4"))]
+    contexts = {"votes": votes}
+    return render(request, 'core/result.html', contexts)

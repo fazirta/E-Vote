@@ -3,6 +3,6 @@ from . import models
 
 # Register your models here.
 @admin.register(models.Candidate)
-@admin.register(models.Voting)
-class VotingAdmin(admin.ModelAdmin):
+@admin.register(models.Vote)
+class VoteAdmin(admin.ModelAdmin):
     pass
