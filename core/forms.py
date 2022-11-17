@@ -10,6 +10,4 @@ class VotingForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(VotingForm, self).__init__(*args, **kwargs)
         self.fields['candidate'].widget.attrs.update(
-            {'placeholder': 'Candidate'})
-
-#def ny gangerti lg
+            {'placeholder': 'Candidate', 'multiple': ''})

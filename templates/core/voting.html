@@ -82,6 +82,14 @@
             z-index: 100 !important;
 
         }
+
+        #id_candidate {
+            display: none;
+        }
+
+        #submit-button {
+            display: none;
+        }
     </style>
 </head>
 
@@ -90,7 +98,7 @@
         <button onclick="hideconfirmationbutton()" id="confirmation-button">
             tidak
         </button>
-        <button id="confirmation-button">
+        <button onclick="clicksubmit()" id="confirmation-button">
             yakin
         </button>
     </div>
@@ -99,28 +107,41 @@
         kwderisaisiaijdiajwid
     </h1>
 
-    <button onclick="showconfirmationbutton()" class="button-candidate" id="button1" type="submit">
+    <button onclick="showconfirmationbutton(), clickoption(1)" class="button-candidate" id="button1">
         vote no 1
     </button>
-    <button onclick="showconfirmationbutton()" class="button-candidate" id="button2" type="submit">
+    <button onclick="showconfirmationbutton(), clickoption(2)" class="button-candidate" id="button2">
         vote no 2
     </button>
-    <button onclick="showconfirmationbutton()" class="button-candidate" id="button3" type="submit">
+    <button onclick="showconfirmationbutton(), clickoption(3)" class="button-candidate" id="button3">
         vote no 3
     </button>
-    <button onclick="showconfirmationbutton()" class="button-candidate" id="button4" type="submit">
+    <button onclick="showconfirmationbutton(), clickoption(4)" class="button-candidate" id="button4">
         vote no 4
     </button>
     <form method="POST" action="" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form_input">
-          {{ form.candidate }}
+            {{ form.candidate }}
         </div>
-        <button type="submit" class="btn btn-link" style="z-index: 0;">
+        <button id="submit-button" type="submit" class="btn btn-link" style="z-index: 0;">
             submit
         </button>
-      </form>
+    </form>
     <script>
+        function clickoption(n) {
+            options = document.querySelectorAll("option");
+            for (let i = 0; i < options.length; i++) {
+                options[i].selected = false;
+
+            }
+            options[n].selected = true;
+        }
+
+        function clicksubmit() {
+            document.getElementById("submit-button").click();
+        }
+
         function showconfirmationbutton() {
             let confirmationbutton = document.getElementById("wrapper-confirmation-button");
             confirmationbutton.style.display = "flex";
