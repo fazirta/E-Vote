@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>voting</title>
+    <title>ICT MAN 4 JAKARTA</title>
     <style>
         #logo {
             width: 60px;
@@ -27,25 +27,30 @@
 
         .button-candidate {
             background-size: cover;
-            width: 300px;
-            height: 600px;
-            font-size: 2rem;
+            width: 320px;
+            height: 550px;
+            font-size: 1.5rem;
+            color: lime;
         }
 
         #button1 {
-            background-image: url('https://static.wikia.nocookie.net/lookism/images/a/a0/Esretrytuy54e5ryu.png');
+            background: url('https://upload.wikimedia.org/wikipedia/commons/6/68/Joe_Biden_presidential_portrait.jpg') center;
+            background-size: cover;
         }
 
         #button2 {
-            background-image: url('https://www.presidenri.go.id/assets/uploads/2020/02/presidenri.go.id-05022020111245-5e3a40bd7cdcb1.35250820-384x512.jpg');
+            background: url('https://upload.wikimedia.org/wikipedia/commons/6/68/Joe_Biden_presidential_portrait.jpg') center;
+            background-size: cover;
         }
 
         #button3 {
-            background-image: url('https://static.wikia.nocookie.net/lookism/images/a/a0/Esretrytuy54e5ryu.png');
+            background: url('https://upload.wikimedia.org/wikipedia/commons/6/68/Joe_Biden_presidential_portrait.jpg') center;
+            background-size: cover;
         }
 
         #button4 {
-            background-image: url('https://static.wikia.nocookie.net/lookism/images/a/a0/Esretrytuy54e5ryu.png');
+            background: url('https://upload.wikimedia.org/wikipedia/commons/6/68/Joe_Biden_presidential_portrait.jpg') center;
+            background-size: cover;
         }
 
         .button-candidate:hover {
@@ -103,22 +108,29 @@
         </button>
     </div>
     <img id="logo" src="https://www.dbl.id/uploads/school/66936/750-MAN_4_JAKARTA.png" width="10" height="10">
-    <h1 style="color: blue;font-size:60px;text-align:center;">
-        kwderisaisiaijdiajwid
+    <h1 style="color: lime; font-size:40px; text-align:center;">
+        E-VOTE
     </h1>
 
-    <button onclick="showconfirmationbutton(), clickoption(1)" class="button-candidate" id="button1">
-        vote no 1
-    </button>
-    <button onclick="showconfirmationbutton(), clickoption(2)" class="button-candidate" id="button2">
-        vote no 2
-    </button>
-    <button onclick="showconfirmationbutton(), clickoption(3)" class="button-candidate" id="button3">
-        vote no 3
-    </button>
-    <button onclick="showconfirmationbutton(), clickoption(4)" class="button-candidate" id="button4">
-        vote no 4
-    </button>
+    <div style="display: flex; justify-content: center;">
+        <button onclick="showconfirmationbutton(), clickoption(1)" class="button-candidate" id="button1">
+            <h4>Pasangan Calon Nomor 1</h4>
+            <h5>Muhammad Farih Albani & Nadhifa Khansa</h5>
+        </button>
+        <button onclick="showconfirmationbutton(), clickoption(2)" class="button-candidate" id="button2">
+            <h4>Pasangan Calon Nomor 2</h4>
+            <h5>Ghifran Majid & Naila Rifda S.</h5>
+        </button>
+        <button onclick="showconfirmationbutton(), clickoption(3)" class="button-candidate" id="button3">
+            <h4>Pasangan Calon Nomor 3</h4>
+            <h5>Rifqy Yasin Saputra & Nayla Nurwahidah Ristiany</h5>
+        </button>
+        <button onclick="showconfirmationbutton(), clickoption(4)" class="button-candidate" id="button4">
+            <h4>Pasangan Calon Nomor 4</h4>
+            <h5>Ramadhan Nayaka Adjie & Audry Raissa Putri</h5>
+        </button>
+    </div>
+
     <form method="POST" action="" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form_input">
