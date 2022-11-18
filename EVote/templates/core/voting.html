@@ -7,18 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>voting</title>
     <style>
-        #logo {
+        @font-face {
+            font-family: The Nutcracker;
+            src: url(materials/Thenutcracker-ZrnK\ \(1\).ttf);
+        }
+
+        @font-face {
+            font-family: Candara;
+            src: url(materials/Candara.ttf);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 12%;
+            margin-right: 12%;
+            margin-top: 5%;
+            margin-bottom: 0;
+
+        }
+
+        .logo {
             width: 60px;
             height: 60px;
             background: url(ihttps://www.dbl.id/uploads/school/66936/750-MAN_4_JAKARTA.png) 0 0;
         }
 
         html {
-            background: url(https://cms.disway.id/uploads/b5e1ed87e7eaad7f89b6b2dda431f534.jpg) no-repeat center fixed;
-            background-size: cover;
+            background: url(materials/BG\ GT.png);
+            background-size: 100%;
         }
 
         body {
+            justify-content: space-between;
+            align-items: center;
             color: white;
             margin: 0;
             padding: 0;
@@ -26,26 +49,42 @@
 
 
         .button-candidate {
+            align-items: center;
+            justify-content: space-between;
             background-size: cover;
-            width: 300px;
-            height: 600px;
+            width: 240px;
+            height: 320px;
             font-size: 2rem;
+            margin: 15px;
+            border-radius: 30px 30px 30px 30px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 10px;
         }
 
         #button1 {
-            background-image: url('https://static.wikia.nocookie.net/lookism/images/a/a0/Esretrytuy54e5ryu.png');
+            background-image: url(materials/Paslon\ 1.png);
+            text-align: center;
+            position: relative;
         }
 
         #button2 {
-            background-image: url('https://www.presidenri.go.id/assets/uploads/2020/02/presidenri.go.id-05022020111245-5e3a40bd7cdcb1.35250820-384x512.jpg');
+            background-image: url(materials/Paslon\ 2.png);
+            text-align: center;
+            vertical-align: bottom;
         }
 
         #button3 {
-            background-image: url('https://static.wikia.nocookie.net/lookism/images/a/a0/Esretrytuy54e5ryu.png');
+            background-image: url(materials/Paslon\ 3.png);
+            text-align: center;
+            vertical-align: bottom;
         }
 
         #button4 {
-            background-image: url('https://static.wikia.nocookie.net/lookism/images/a/a0/Esretrytuy54e5ryu.png');
+            background-image: url(materials/Paslon\ 4.png);
+            text-align: center;
+            vertical-align: bottom;
         }
 
         .button-candidate:hover {
@@ -69,57 +108,87 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: white;
             display: flex;
+            background-color: black;
             align-items: center;
             justify-items: center;
             justify-content: center;
+            background-size: cover;
             opacity: 50%;
         }
 
         #confirmation-button {
+            vertical-align: middle;
+            background-color: #9D9D9D;
+            font-family: Candara;
+            width: 5%;
+            height: 5%;
+            border-radius: 10px 10px 10px 10px;
             padding: 5px 10px;
             z-index: 100 !important;
+            margin: 10px;
+        }
 
+        .footer {
+            width: 100%;
+            height: 30px;
+            display: block;
         }
     </style>
 </head>
 
+<header>
+    <img class="logo MPK" src="materials/mpkk.png" height="5">
+    <img class="title" src="materials/yh.png" height="130px">
+    <img class="logo Kader" src="materials/kdrrr.png" height="5">
+</header>
+
 <body>
     <div id="wrapper-confirmation-button">
         <button onclick="hideconfirmationbutton()" id="confirmation-button">
-            tidak
+            <strong>Tidak</strong>
         </button>
         <button id="confirmation-button">
-            yakin
+            <strong>Yakin</strong>
         </button>
     </div>
-    <img id="logo" src="https://www.dbl.id/uploads/school/66936/750-MAN_4_JAKARTA.png" width="10" height="10">
-    <h1 style="color: blue;font-size:60px;text-align:center;">
-        kwderisaisiaijdiajwid
-    </h1>
-
-    <button onclick="showconfirmationbutton()" class="button-candidate" id="button1" type="submit">
-        vote no 1
-    </button>
-    <button onclick="showconfirmationbutton()" class="button-candidate" id="button2" type="submit">
-        vote no 2
-    </button>
-    <button onclick="showconfirmationbutton()" class="button-candidate" id="button3" type="submit">
-        vote no 3
-    </button>
-    <button onclick="showconfirmationbutton()" class="button-candidate" id="button4" type="submit">
-        vote no 4
-    </button>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <button onclick="showconfirmationbutton()" class="button-candidate" id="button1" type="submit">
+            <div style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(74, 74, 74, 0.502) 0%, rgba(0,0,0,0.5018382352941176) 37%, rgba(0,212,255,0) 100%);">
+                <a style="font-family: The Nutcracker; color: gold; z-index: 100 !important;">
+                    M. Farih Albani </br>
+                    Nadhifa Khansa
+                </a>
+            </div>
+        </button>
+        <button onclick="showconfirmationbutton()" class="button-candidate" id="button2" type="submit">
+            <a style="font-family: The Nutcracker; color: gold; z-index: 100 !important;">
+                Ghifran Majid </br>
+                Naila Rifda S
+            </a>
+        </button>
+        <button onclick="showconfirmationbutton()" class="button-candidate" id="button3" type="submit">
+            <a style="font-family: The Nutcracker; color: gold; z-index: 100 !important;">
+                Rifqi Yasin Saputra </br>
+                Nayla Nurwahida
+            </a>
+        </button>
+        <button onclick="showconfirmationbutton()" class="button-candidate" id="button4" type="submit">
+            <a style="font-family: The Nutcracker; color: gold; z-index: 100 !important;">
+                Ramadhan Nayaka </br>
+                Audry Raissa Putri
+            </a>
+        </button>
+    </div>
     <form method="POST" action="" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form_input">
-          {{ form.candidate }}
+            {{ form.candidate }}
         </div>
         <button type="submit" class="btn btn-link" style="z-index: 0;">
-            submit
+            Submit
         </button>
-      </form>
+    </form>
     <script>
         function showconfirmationbutton() {
             let confirmationbutton = document.getElementById("wrapper-confirmation-button");
@@ -131,5 +200,13 @@
         }
     </script>
 </body>
+
+<footer style="position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0);">
+    <div class="footer">
+        <div style="color: #9D9D9D; font-family: Candara; text-align: center;">
+            Website by ICT
+        </div>
+    </div>
+</footer>
 
 </html>
