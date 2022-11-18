@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-VOTE⚡ICT</title>
+    <title>LIVE COUNT 📈</title>
     <link rel="icon" type="image/x-icon" href="{% static '/core/favicon/favicon.ico' %}">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -80,7 +80,7 @@
     </script>
 
     <script type="text/javascript">
-        window.setInterval('refresh()', 5000); 	// Call a function every 10000 milliseconds (OR 10 seconds).
+        window.setInterval('refresh()', Math.floor(Math.random() * 10000));
 
         // Refresh or reload page.
         function refresh() {
