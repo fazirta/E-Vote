@@ -13,18 +13,40 @@
         window.history.forward();
     </script>
     <style>
-        #logo {
+        @font-face {
+            font-family: The Nutcracker;
+            src: url("{% static '/core/materials/Thenutcracker.ttf' %}");
+        }
+
+        @font-face {
+            font-family: Candara;
+            src: url("{% static '/core/materials/Candara.ttf' %}");
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 12%;
+            margin-right: 12%;
+            margin-top: 5%;
+            margin-bottom: 0;
+
+        }
+
+        .logo {
             width: 60px;
             height: 60px;
-            background: url(ihttps://www.dbl.id/uploads/school/66936/750-MAN_4_JAKARTA.png) 0 0;
         }
 
         html {
-            background: url(https://cms.disway.id/uploads/b5e1ed87e7eaad7f89b6b2dda431f534.jpg) no-repeat center fixed;
+            background: url("{% static '/core/materials/background.png' %}") no-repeat center fixed;
             background-size: cover;
         }
 
         body {
+            justify-content: space-between;
+            align-items: center;
             color: white;
             margin: 0;
             padding: 0;
@@ -32,40 +54,41 @@
 
 
         .button-candidate {
+            position: relative;
             background-size: cover;
-            width: 320px;
-            height: 550px;
-            font-size: 1.5rem;
-            color: lime;
-        }
-
-        #button1 {
-            background: url('https://upload.wikimedia.org/wikipedia/commons/6/68/Joe_Biden_presidential_portrait.jpg') center;
-            background-size: cover;
-        }
-
-        #button2 {
-            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Donald_Trump_official_portrait.jpg/330px-Donald_Trump_official_portrait.jpg') center;
-            background-size: cover;
-        }
-
-        #button3 {
-            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Boris_Johnson_official_portrait_%28cropped%29.jpg/330px-Boris_Johnson_official_portrait_%28cropped%29.jpg') center;
-            background-size: cover;
-        }
-
-        #button4 {
-            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Vladimir_Putin_-_2012.jpg/330px-Vladimir_Putin_-_2012.jpg') center;
-            background-size: cover;
+            width: 240px;
+            height: 320px;
+            font-size: 1.6rem;
+            border-radius: 30px 30px 30px 30px;
+            transition: .2s;
+            border: none;
+            margin: 0 1rem;
         }
 
         .button-candidate:hover {
-            background-image: url('https://media.geeksforgeeks.org/wp-content/uploads/20190314004249/sample-image2.png');
-            background-size: cover;
+            transform: scale(105%);
+        }
+
+        .button-candidate:nth-child(1) {
+            background-image: url("{% static '/core/materials/Paslon1.png' %}");
+        }
+
+        .button-candidate:nth-child(2) {
+            background-image: url("{% static '/core/materials/Paslon2.png' %}");
+        }
+
+        .button-candidate:nth-child(3) {
+            background-image: url("{% static '/core/materials/Paslon3.png' %}");
+        }
+
+        .button-candidate:nth-child(4) {
+            background-image: url("{% static '/core/materials/Paslon4.png' %}");
         }
 
         #wrapper-confirmation-button {
             position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             display: flex;
@@ -73,6 +96,7 @@
             justify-items: center;
             justify-content: center;
             display: none;
+            z-index: 1000 !important;
         }
 
         #wrapper-confirmation-button::before {
@@ -80,64 +104,95 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: white;
             display: flex;
+            background-color: black;
             align-items: center;
             justify-items: center;
             justify-content: center;
+            background-size: cover;
             opacity: 50%;
         }
 
         #confirmation-button {
-            padding: 5px 10px;
+            vertical-align: middle;
+            background-color: #262626;
+            color: gold;
+            font-family: Candara;
+            font-size: 1rem;
+            border-radius: 10px 10px 10px 10px;
+            padding: 0.5rem 1rem;
+            margin: 10px;
             z-index: 100 !important;
-
+            border: 1px solid gold;
+            transition: .2s;
         }
 
-        #id_candidate {
-            display: none;
+        #confirmation-button:hover {
+            transform: scale(105%);
         }
 
-        #submit-button {
-            display: none;
+        .footer {
+            width: 100%;
+            height: 30px;
+            display: block;
         }
     </style>
 </head>
 
+<header>
+    <img class="logo MPK" src="{% static '/core/materials/mpkk.png' %}" height="5">
+    <img class="title" src="{% static '/core/materials/yh.png' %}" height="110px">
+    <img class="logo Kader" src="{% static '/core/materials/kdrrr.png' %}" height="5">
+</header>
+
 <body>
     <div id="wrapper-confirmation-button">
-        <button onclick="hideconfirmationbutton()" id="confirmation-button">
-            tidak
+        <button onClick="hideconfirmationbutton()" id="confirmation-button">
+            <strong>Tidak</strong>
         </button>
-        <button onclick="clicksubmit()" id="confirmation-button">
-            yakin
-        </button>
-    </div>
-    <img id="logo" src="https://www.dbl.id/uploads/school/66936/750-MAN_4_JAKARTA.png" width="10" height="10">
-    <h1 style="color: lime; font-size:40px; text-align:center;">
-        E-VOTE
-    </h1>
-
-    <div style="display: flex; justify-content: center;">
-        <button onclick="showconfirmationbutton(), clickoption(1)" class="button-candidate" id="button1">
-            <h4>Pasangan Calon Nomor 1</h4>
-            <h5>Muhammad Farih Albani & Nadhifa Khansa</h5>
-        </button>
-        <button onclick="showconfirmationbutton(), clickoption(2)" class="button-candidate" id="button2">
-            <h4>Pasangan Calon Nomor 2</h4>
-            <h5>Ghifran Majid & Naila Rifda S.</h5>
-        </button>
-        <button onclick="showconfirmationbutton(), clickoption(3)" class="button-candidate" id="button3">
-            <h4>Pasangan Calon Nomor 3</h4>
-            <h5>Rifqy Yasin Saputra & Nayla Nurwahidah Ristiany</h5>
-        </button>
-        <button onclick="showconfirmationbutton(), clickoption(4)" class="button-candidate" id="button4">
-            <h4>Pasangan Calon Nomor 4</h4>
-            <h5>Ramadhan Nayaka Adjie & Audry Raissa Putri</h5>
+        <button onClick="clicksubmit()" id="confirmation-button">
+            <strong>Yakin</strong>
         </button>
     </div>
-
-    <form method="POST" action="" enctype="multipart/form-data">
+    <div style="display: flex; justify-content: center; align-items: center; padding: 8rem 0;">
+        <button onclick="showconfirmationbutton(), clickoption(1)" class="button-candidate" type="submit">
+            <div
+                style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 32%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
+                <a style="font-family: The Nutcracker; color: gold; z-index: 100 !important; padding-bottom: 10px;">
+                    M. Farih Albani </br>
+                    Nadhifa Khansa
+                </a>
+            </div>
+        </button>
+        <button onclick="showconfirmationbutton(), clickoption(2)" class="button-candidate" type="submit">
+            <div
+                style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 32%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
+                <a style="font-family: The Nutcracker; color: gold; z-index: 100 !important; padding-bottom: 10px;">
+                    Ghifran Majid </br>
+                    Naila Rifda S
+                </a>
+            </div>
+        </button>
+        <button onclick="showconfirmationbutton(), clickoption(3)" class="button-candidate" type="submit">
+            <div
+                style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 32%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
+                <a style="font-family: The Nutcracker; color: gold; z-index: 100 !important; padding-bottom: 10px;">
+                    Rifqi Yasin Saputra </br>
+                    Nayla Nurwahida
+                </a>
+            </div>
+        </button>
+        <button onclick="showconfirmationbutton(), clickoption(4)" class="button-candidate" type="submit">
+            <div
+                style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 32%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
+                <a style="font-family: The Nutcracker; color: gold; z-index: 100 !important; padding-bottom: 10px;">
+                    Ramadhan Nayaka </br>
+                    Audry Raissa Putri
+                </a>
+            </div>
+        </button>
+    </div>
+    <form method="POST" action="" enctype="multipart/form-data" style="display: none;">
         {% csrf_token %}
         <div class="form_input">
             {{ form.candidate }}
@@ -146,6 +201,13 @@
             submit
         </button>
     </form>
+    <footer style="position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0);">
+        <div class="footer">
+            <div style="color: #9D9D9D; font-family: Candara; text-align: center;">
+                Website by ICT
+            </div>
+        </div>
+    </footer>
     <script>
         function clickoption(n) {
             options = document.querySelectorAll("option");
