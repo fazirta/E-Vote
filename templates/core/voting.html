@@ -40,7 +40,7 @@
         }
 
         html {
-            background: url("{% static '/core/materials/background.png' %}") no-repeat center fixed;
+            background: url("{% static '/core/materials/bg.png' %}") no-repeat center fixed;
             background-size: cover;
         }
 
@@ -63,10 +63,12 @@
             transition: .2s;
             border: none;
             margin: 0 1rem;
+            box-shadow: 8px 8px 32px 0 rgba(0, 0, 0, 0.5);
         }
 
         .button-candidate:hover {
             transform: scale(105%);
+            box-shadow: 8px 8px 50px 0 rgba(0, 0, 0, 0.8);
         }
 
         .button-candidate:nth-child(1) {
@@ -110,7 +112,7 @@
             justify-items: center;
             justify-content: center;
             background-size: cover;
-            opacity: 50%;
+            opacity: 80%;
         }
 
         #confirmation-button {
@@ -128,7 +130,7 @@
         }
 
         #confirmation-button:hover {
-            transform: scale(105%);
+            transform: scale(110%);
         }
 
         .footer {
@@ -154,10 +156,10 @@
             <strong>Yakin</strong>
         </button>
     </div>
-    <div style="display: flex; justify-content: center; align-items: center; padding: 8rem 0;">
+    <div style="display: flex; justify-content: center; align-items: center; padding: 10rem 0;">
         <button onclick="showconfirmationbutton(), clickoption(1)" class="button-candidate" type="submit">
             <div
-                style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 32%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
+                style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 18%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
                 <a style="font-family: The Nutcracker; color: gold; z-index: 100 !important; padding-bottom: 10px;">
                     M. Farih Albani </br>
                     Nadhifa Khansa
@@ -166,7 +168,7 @@
         </button>
         <button onclick="showconfirmationbutton(), clickoption(2)" class="button-candidate" type="submit">
             <div
-                style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 32%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
+                style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 18%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
                 <a style="font-family: The Nutcracker; color: gold; z-index: 100 !important; padding-bottom: 10px;">
                     Ghifran Majid </br>
                     Naila Rifda S
@@ -175,7 +177,7 @@
         </button>
         <button onclick="showconfirmationbutton(), clickoption(3)" class="button-candidate" type="submit">
             <div
-                style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 32%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
+                style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 18%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
                 <a style="font-family: The Nutcracker; color: gold; z-index: 100 !important; padding-bottom: 10px;">
                     Rifqi Yasin Saputra </br>
                     Nayla Nurwahida
@@ -184,7 +186,7 @@
         </button>
         <button onclick="showconfirmationbutton(), clickoption(4)" class="button-candidate" type="submit">
             <div
-                style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 32%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
+                style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 18%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
                 <a style="font-family: The Nutcracker; color: gold; z-index: 100 !important; padding-bottom: 10px;">
                     Ramadhan Nayaka </br>
                     Audry Raissa Putri
@@ -203,8 +205,8 @@
     </form>
     <footer style="position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0);">
         <div class="footer">
-            <div style="color: #9D9D9D; font-family: Candara; text-align: center;">
-                Website by ICT
+            <div style="color: #fff; text-shadow: 0px 0px 5px rgb(0, 0, 0, 1); font-family: Candara; text-align: center; letter-spacing: 1px;">
+                E-Vote by ICT
             </div>
         </div>
     </footer>
