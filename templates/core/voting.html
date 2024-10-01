@@ -141,23 +141,23 @@
     </style>
 </head>
 
-<header>
-    <img class="logo MPK" src="{% static '/core/materials/mpkk.png' %}" height="5">
-    <img class="title" src="{% static '/core/materials/yh.png' %}" height="110px">
-    <img class="logo Kader" src="{% static '/core/materials/kdrrr.png' %}" height="5">
-</header>
-
 <body>
+    <header>
+        <img class="logo MPK" src="{% static '/core/materials/mpkk.png' %}" height="5">
+        <img class="title" src="{% static '/core/materials/yh.png' %}" height="110px">
+        <img class="logo Kader" src="{% static '/core/materials/kdrrr.png' %}" height="5">
+    </header>
+
     <div id="wrapper-confirmation-button">
-        <button onClick="hideconfirmationbutton()" id="confirmation-button">
+        <button onClick="hideConfirmationButton()" id="confirmation-button">
             <strong>Tidak</strong>
         </button>
-        <button onClick="clicksubmit()" id="confirmation-button">
+        <button onClick="clickSubmit()" id="confirmation-button">
             <strong>Yakin</strong>
         </button>
     </div>
     <div style="display: flex; justify-content: center; align-items: center; padding: 10rem 0;">
-        <button onclick="showconfirmationbutton(), clickoption(1)" class="button-candidate" type="submit">
+        <button onclick="showConfirmationButton(), clickOption(1)" class="button-candidate" type="submit">
             <div
                 style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 18%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
                 <a style="font-family: The Nutcracker; color: gold; z-index: 100 !important; padding-bottom: 10px;">
@@ -166,7 +166,7 @@
                 </a>
             </div>
         </button>
-        <button onclick="showconfirmationbutton(), clickoption(2)" class="button-candidate" type="submit">
+        <button onclick="showConfirmationButton(), clickOption(2)" class="button-candidate" type="submit">
             <div
                 style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 18%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
                 <a style="font-family: The Nutcracker; color: gold; z-index: 100 !important; padding-bottom: 10px;">
@@ -175,7 +175,7 @@
                 </a>
             </div>
         </button>
-        <button onclick="showconfirmationbutton(), clickoption(3)" class="button-candidate" type="submit">
+        <button onclick="showConfirmationButton(), clickOption(3)" class="button-candidate" type="submit">
             <div
                 style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 18%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
                 <a style="font-family: The Nutcracker; color: gold; z-index: 100 !important; padding-bottom: 10px;">
@@ -184,7 +184,7 @@
                 </a>
             </div>
         </button>
-        <button onclick="showconfirmationbutton(), clickoption(4)" class="button-candidate" type="submit">
+        <button onclick="showConfirmationButton(), clickOption(4)" class="button-candidate" type="submit">
             <div
                 style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 18%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
                 <a style="font-family: The Nutcracker; color: gold; z-index: 100 !important; padding-bottom: 10px;">
@@ -205,13 +205,14 @@
     </form>
     <footer style="position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0);">
         <div class="footer">
-            <div style="color: #fff; text-shadow: 0px 0px 5px rgb(0, 0, 0, 1); font-family: Candara; text-align: center; letter-spacing: 1px;">
+            <div
+                style="color: #fff; text-shadow: 0px 0px 5px rgb(0, 0, 0, 1); font-family: Candara; text-align: center; letter-spacing: 1px;">
                 E-Vote by ICT
             </div>
         </div>
     </footer>
     <script>
-        function clickoption(n) {
+        function clickOption(n) {
             options = document.querySelectorAll("option");
             for (let i = 0; i < options.length; i++) {
                 options[i].selected = false;
@@ -220,15 +221,15 @@
             options[n].selected = true;
         }
 
-        function clicksubmit() {
+        function clickSubmit() {
             document.getElementById("submit-button").click();
         }
 
-        function showconfirmationbutton() {
+        function showConfirmationButton() {
             let confirmationbutton = document.getElementById("wrapper-confirmation-button");
             confirmationbutton.style.display = "flex";
         }
-        function hideconfirmationbutton() {
+        function hideConfirmationButton() {
             let confirmationbutton = document.getElementById("wrapper-confirmation-button");
             confirmationbutton.style.display = "none";
         }
